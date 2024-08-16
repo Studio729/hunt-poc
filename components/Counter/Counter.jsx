@@ -1,17 +1,17 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./styles.module.css";
+'use client'
+import React, { useState } from 'react'
+import styles from './styles.module.css'
 
 function Counter({ initialCount = 99 }) {
-  const [count, setCount] = useState(initialCount);
+  const [count, setCount] = useState(initialCount)
 
   const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+    setCount((prevCount) => prevCount + 1)
+  }
 
   const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
+    setCount((prevCount) => prevCount - 1)
+  }
 
   return (
     <div className={styles.counter}>
@@ -23,7 +23,7 @@ function Counter({ initialCount = 99 }) {
         +
       </button>
     </div>
-  );
+  )
 }
 
-export default Counter;
+export default Counter
