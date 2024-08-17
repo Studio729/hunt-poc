@@ -44,27 +44,27 @@ export default function StyleComponentGuide() {
       <Container size='4'>
         <Grid
           columns='repeat(12, minmax(0, 1fr))'
-          gap='1'
-          rows='repeat(5, minmax(0, 1fr))'
+          gap='1'          
+          rows='repeat(6, minmax(0, 1fr))'
           width='auto'
         >
-          <Flex gridColumn='1/3'>
+          <Flex gridColumn='1/span 2'>
             <Text>Backgrounds</Text>
-            <Box></Box>
+            <Box style={{height: "1px", backgroundImage: 'linear-gradient(to right, transparent, var(--gray-a8) 30%, var(--gray-a8) 70%, transparent)'}}></Box>
           </Flex>
-          <Flex gridColumn='3/6'>
+          <Flex gridColumn='3/span 3'>
             <Text>Interactive Components</Text>
             <Box></Box>
           </Flex>
-          <Flex gridColumn='6/9'>
+          <Flex gridColumn='6/span 3'>
             <Text>Borders and separators</Text>
             <Box></Box>
           </Flex>
-          <Flex gridColumn='9/11'>
+          <Flex gridColumn='9/span 2'>
             <Text>Solid Colors</Text>
             <Box></Box>
           </Flex>
-          <Flex gridColumn='11/12'>
+          <Flex gridColumn='11/span 2'>
             <Text>Accessible text</Text>
             <Box></Box>
           </Flex>
@@ -80,7 +80,10 @@ export default function StyleComponentGuide() {
             <Box key={`green-swatch-{i}`} style={{ backgroundColor: `var(--green-${i})` }}></Box>
           ))}
           {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-            <Box key={`teal-swatch-{i}` }style={{ backgroundColor: `var(--teal-${i})` }}></Box>
+            <Box key={`teal-swatch-{i}`} style={{ backgroundColor: `var(--teal-${i})` }}></Box>
+          ))}
+          {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
+            <Box key={`gray-swatch-{i}`} style={{ backgroundColor: `var(--gray-${i})` }}></Box>
           ))}
         </Grid>
       </Container>
