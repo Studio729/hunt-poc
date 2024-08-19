@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Flex, Text, Button, Section, Heading, Code, Container, Box, Grid, Spinner, TextField, IconButton } from "@radix-ui/themes";
+import { Flex, Text, Button, Section, Heading, Code, Container, Box, Grid, Spinner, TextField, IconButton, Select } from "@radix-ui/themes";
 import { ArrowRightIcon, BookmarkIcon, DotsHorizontalIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Fragment } from "react";
 
@@ -72,21 +72,21 @@ export default function StyleComponentGuide() {
               <Box style={{ height: "1px", width: "100%", backgroundImage: `linear-gradient(to right, transparent, var(--gray-a8) 30%, var(--gray-a8) 70%, transparent)` }}></Box>
             </Flex>
             {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-              <Flex key={`swatch-index-{i}`} justify="center" align="center" direction="column">
+              <Flex key={`swatch-index-${i}`} justify="center" align="center" direction="column">
                 {i}
               </Flex>
             ))}
             {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-              <Box key={`blue-swatch-{i}`} style={{ height: "50px", backgroundColor: `var(--blue-${i})` }}></Box>
+              <Box key={`blue-swatch-${i}`} style={{ height: "50px", backgroundColor: `var(--blue-${i})` }}></Box>
             ))}
             {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-              <Box key={`green-swatch-{i}`} style={{ height: "50px", backgroundColor: `var(--green-${i})` }}></Box>
+              <Box key={`green-swatch-${i}`} style={{ height: "50px", backgroundColor: `var(--green-${i})` }}></Box>
             ))}
             {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-              <Box key={`teal-swatch-{i}`} style={{ height: "50px", backgroundColor: `var(--teal-${i})` }}></Box>
+              <Box key={`teal-swatch-${i}`} style={{ height: "50px", backgroundColor: `var(--teal-${i})` }}></Box>
             ))}
             {Array.from({ length: 12 }, (v, i) => i + 1).map((i) => (
-              <Box key={`gray-swatch-{i}`} style={{ height: "50px", backgroundColor: `var(--gray-${i})` }}></Box>
+              <Box key={`gray-swatch-${i}`} style={{ height: "50px", backgroundColor: `var(--gray-${i})` }}></Box>
             ))}
           </Grid>
         </Container>
@@ -100,7 +100,7 @@ export default function StyleComponentGuide() {
         {/* <Container size="4"> */}
         <Flex direction="column" gap="4" p="5">
           {Array.from({ length: 9 }, (v, i) => i + 1).map((i) => (
-            <Flex key={`heading-sample-{i}`} gap="4" align="center">
+            <Flex key={`heading-sample-${i}`} gap="4" align="center">
               <Flex height="50px" width="50px" justify="center" align="center" style={{ backgroundColor: "var(--gray-6)", borderRadius: "var(--radius-4)" }}>
                 H{i}
               </Flex>
@@ -122,7 +122,7 @@ export default function StyleComponentGuide() {
         <Heading size="6">Size</Heading>
         <Grid rows="0.5fr 1fr 1fr 1fr 1fr" columns="auto" flow="column" gap="4" py="4">
           {Array.from({ length: 4 }, (v, i) => i + 1).map((i) => (
-            <Fragment key={`button-size-{i}`}>
+            <Fragment key={`button-size-${i}`}>
               <Flex justify="center">
                 <Text>Size: {i}</Text>
               </Flex>
@@ -152,7 +152,7 @@ export default function StyleComponentGuide() {
           <Heading size="6">Variant / High Contrast</Heading>
           <Grid rows="0.5fr 1fr 1fr 1fr 1fr" columns="auto" flow="column" gap="4" py="4">
             {["classic", "solid", "soft", "surface", "outline", "ghost"].map((i) => (
-              <Fragment key={`button-variant-{i}`}>
+              <Fragment key={`button-variant-${i}`}>
                 <Flex justify="center">
                   <Text>{i}</Text>
                 </Flex>
@@ -213,7 +213,7 @@ export default function StyleComponentGuide() {
           <Heading size="6">Spinner</Heading>
           <Grid rows="0.5fr 1fr 1fr 1fr 1fr" columns="auto" flow="column" gap="4" py="4">
             {["classic", "solid", "soft", "surface", "outline"].map((i) => (
-              <Fragment key={`button-spinner-{i}`}>
+              <Fragment key={`button-spinner-${i}`}>
                 <Flex justify="center">
                   <Text>{i}</Text>
                 </Flex>
@@ -262,44 +262,310 @@ export default function StyleComponentGuide() {
           <Text size={4}>Captures user input with an optional slot for buttons and icons.</Text>
         </Box>
 
-        <Heading size="6">Size</Heading>
-        <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
-          {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
-            <Fragment key={`textfields-size-{i}`}>
-              <Flex justify="center">
-                <Text>Size: {i}</Text>
-              </Flex>
-              <Flex align="center">
-                <TextField.Root size={`${i}`} placeholder="Company Name" />
-              </Flex>
-            </Fragment>
-          ))}
+        <Grid columns="3" rows="auto">
+          <Box>
+            <Heading size="5">Size</Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
+                <Fragment key={`textfields-size-${i}`}>
+                  <Flex align="center">
+                    <Text>Size: {i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <TextField.Root size={`${i}`} placeholder="Company Name" />
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              With Icons
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
+                <Fragment key={`textfield-icons-${i}`}>
+                  <Flex align="center">
+                    <Text>Size: {i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <TextField.Root size={`${i}`} placeholder="Company Name">
+                      <TextField.Slot>
+                        <MagnifyingGlassIcon height="16" width="16" />
+                      </TextField.Slot>
+                      <TextField.Slot>
+                        <IconButton size="1" variant="ghost">
+                          <DotsHorizontalIcon height="14" width="14" />
+                        </IconButton>
+                      </TextField.Slot>
+                    </TextField.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Variant
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["classic", "surface", "soft"].map((i) => (
+                <Fragment key={`textfield-variant-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <TextField.Root variant={`${i}`} placeholder="Company Name">
+                      <TextField.Slot>
+                        <MagnifyingGlassIcon height="16" width="16" />
+                      </TextField.Slot>
+                      <TextField.Slot>
+                        <IconButton size="1" variant="ghost">
+                          <DotsHorizontalIcon height="14" width="14" />
+                        </IconButton>
+                      </TextField.Slot>
+                    </TextField.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Color
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["green", "blue", "teal", "red"].map((i) => (
+                <Fragment key={`textfield-color-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <TextField.Root color={`${i}`} variant="soft" placeholder="Company Name">
+                      <TextField.Slot>
+                        <MagnifyingGlassIcon height="16" width="16" />
+                      </TextField.Slot>
+                      <TextField.Slot>
+                        <IconButton size="1" variant="ghost">
+                          <DotsHorizontalIcon height="14" width="14" />
+                        </IconButton>
+                      </TextField.Slot>
+                    </TextField.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Radius
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["none", "small", "medium", "large", "full"].map((i) => (
+                <Fragment key={`textfield-radius-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <TextField.Root radius={`${i}`} placeholder="Company Name">
+                      <TextField.Slot>
+                        <MagnifyingGlassIcon height="16" width="16" />
+                      </TextField.Slot>
+                      <TextField.Slot>
+                        <IconButton size="1" variant="ghost">
+                          <DotsHorizontalIcon height="14" width="14" />
+                        </IconButton>
+                      </TextField.Slot>
+                    </TextField.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
         </Grid>
+      </Section>
 
-        <Heading size="6">With Icons</Heading>
-        <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
-          {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
-            <Fragment key={`textfield-icons-{i}`}>
-              <Flex justify="center">
-                <Text>Size: {i}</Text>
-              </Flex>
-              <Flex align="center">
-                <TextField.Root size={`${i}`} placeholder="Company Name">
-                  <TextField.Slot>
-                    <MagnifyingGlassIcon height="16" width="16" />
-                  </TextField.Slot>
-                  <TextField.Slot>
-                    <IconButton size="1" variant="ghost">
-                      <DotsHorizontalIcon height="14" width="14" />
-                    </IconButton>
-                  </TextField.Slot>
-                </TextField.Root>
-              </Flex>
-            </Fragment>
-          ))}
+      <Section px="5">
+        <Box py="5">
+          <Heading size="8">Select</Heading>
+          <Text size={4}>Displays a list of options for the user to pick from—triggered by a button.</Text>
+        </Box>
+
+        <Grid columns="3" rows="auto">
+          <Box>
+            <Heading size="5">Size</Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
+                <Fragment key={`select-size-${i}`}>
+                  <Flex align="center">
+                    <Text>Size: {i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <Select.Root size={`${i}`} defaultValue="apple">
+                      <Select.Trigger />
+                      <Select.Content>
+                        <Select.Group>
+                          <Select.Label>Fruits</Select.Label>
+                          <Select.Item value="orange">Orange</Select.Item>
+                          <Select.Item value="apple">Apple</Select.Item>
+                          <Select.Item value="grape" disabled>
+                            Grape
+                          </Select.Item>
+                        </Select.Group>
+                        <Select.Separator />
+                        <Select.Group>
+                          <Select.Label>Vegetables</Select.Label>
+                          <Select.Item value="carrot">Carrot</Select.Item>
+                          <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                      </Select.Content>
+                    </Select.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              With Icons
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {Array.from({ length: 3 }, (v, i) => i + 1).map((i) => (
+                <Fragment key={`select-icons-${i}`}>
+                  <Flex align="center">
+                    <Text>Size: {i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <Select.Root size={`${i}`}>
+                      <Select.Trigger placeholder="Pick a fruit" />
+                      <Select.Content position="popper">
+                        <Select.Group>
+                          <Select.Label>Fruits</Select.Label>
+                          <Select.Item value="orange">Orange</Select.Item>
+                          <Select.Item value="apple">Apple</Select.Item>
+                          <Select.Item value="grape" disabled>
+                            Grape
+                          </Select.Item>
+                        </Select.Group>
+                        <Select.Separator />
+                        <Select.Group>
+                          <Select.Label>Vegetables</Select.Label>
+                          <Select.Item value="carrot">Carrot</Select.Item>
+                          <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                      </Select.Content>
+                    </Select.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Variant
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["classic", "surface", "soft", "ghost"].map((i) => (
+                <Fragment key={`select-variant-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <Select.Root defaultValue="apple">
+                      <Select.Trigger variant={`${i}`} />
+                      <Select.Content>
+                        <Select.Group>
+                          <Select.Label>Fruits</Select.Label>
+                          <Select.Item value="orange">Orange</Select.Item>
+                          <Select.Item value="apple">Apple</Select.Item>
+                          <Select.Item value="grape" disabled>
+                            Grape
+                          </Select.Item>
+                        </Select.Group>
+                        <Select.Separator />
+                        <Select.Group>
+                          <Select.Label>Vegetables</Select.Label>
+                          <Select.Item value="carrot">Carrot</Select.Item>
+                          <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                      </Select.Content>
+                    </Select.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Color
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["green", "blue", "teal", "red"].map((i) => (
+                <Fragment key={`select-color-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <Select.Root defaultValue="apple">
+                      <Select.Trigger color={`${i}`} variant="soft" />
+                      <Select.Content color={`${i}`}>
+                        <Select.Group>
+                          <Select.Label>Fruits</Select.Label>
+                          <Select.Item value="orange">Orange</Select.Item>
+                          <Select.Item value="apple">Apple</Select.Item>
+                          <Select.Item value="grape" disabled>
+                            Grape
+                          </Select.Item>
+                        </Select.Group>
+                        <Select.Separator />
+                        <Select.Group>
+                          <Select.Label>Vegetables</Select.Label>
+                          <Select.Item value="carrot">Carrot</Select.Item>
+                          <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                      </Select.Content>
+                    </Select.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
+          <Box>
+            <Heading size="5" mt="4">
+              Radius
+            </Heading>
+            <Grid columns="auto 1fr" rows="auto" flow="row" gap="4" py="4">
+              {["none", "small", "medium", "large", "full"].map((i) => (
+                <Fragment key={`select-radius-${i}`}>
+                  <Flex align="center">
+                    <Text>{i}</Text>
+                  </Flex>
+                  <Flex align="center">
+                    <Select.Root defaultValue="apple">
+                      <Select.Trigger radius={`${i}`} />
+                      <Select.Content>
+                        <Select.Group>
+                          <Select.Label>Fruits</Select.Label>
+                          <Select.Item value="orange">Orange</Select.Item>
+                          <Select.Item value="apple">Apple</Select.Item>
+                          <Select.Item value="grape" disabled>
+                            Grape
+                          </Select.Item>
+                        </Select.Group>
+                        <Select.Separator />
+                        <Select.Group>
+                          <Select.Label>Vegetables</Select.Label>
+                          <Select.Item value="carrot">Carrot</Select.Item>
+                          <Select.Item value="potato">Potato</Select.Item>
+                        </Select.Group>
+                      </Select.Content>
+                    </Select.Root>
+                  </Flex>
+                </Fragment>
+              ))}
+            </Grid>
+          </Box>
         </Grid>
-
-
       </Section>
     </>
   );
