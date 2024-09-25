@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 34 35 36;
+    --foreground: 245 248 250;
+    --brand-green: hsl(var(--nextui-primary));
+    --brand-blue: hsl(var(--nextui-secondary));
+    --brand-cyan: hsl(var(--nextui-huntressblue));
+    --brand-black: hsl(var(--nextui-background));
+    --brand-white: hsl(var(--nextui-foreground));
+    --success: hsl(var(--nextui-success));
+    --warning: hsl(var(--nextui-warning));
+    --danger: hsl(var(--nextui-danger));
+    /* --border-gray: 112, 112, 112, 72; */
+    --border-gray: "#7070704d";
+    --border-radius: 5px;
+    --border-small: var(--nextui-border-width-small) solid var(--border-gray);
+    --border-medium: var(--nextui-border-width-medium) solid var(--border-gray);
+    --border-large: var(--nextui-border-width-large) solid var(--border-gray);
+    --container-1: 640px;
+    --container-2: 768px;
+    --container-3: 1024px;
+    --container-4: 1280px;
+    --container-5: 1536px;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Hknova Webfont", "Kanit";
+  max-width: 100vw;
+  min-height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+}
+
+li {
+  padding-left: 9px;
+}
+
+li::marker {
+  color: var(--brand-green);
+  /* font-size: 24px;
+  line-height: 0.1; */
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 35px;
+}
+
+li + ul {
+  padding-left: 20px;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+input {
+  height: 50px;
+  background-color: #333436;
+  padding: 4px 20px 8px;
+  border-radius: 3px;
+}

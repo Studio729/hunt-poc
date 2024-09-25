@@ -1,6 +1,6 @@
-'use client'
-import React, { useState } from 'react'
-import styles from './styles.module.css'
+"use client"
+import React, { useState } from "react"
+import styles from "./styles.module.css"
 
 function Counter({ initialCount = 99 }) {
   const [count, setCount] = useState(initialCount)

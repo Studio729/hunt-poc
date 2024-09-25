@@ -1,0 +1,30 @@
+.button {
+  border-radius: var(--border-radius) !important;
+  font-weight: 600 !important;
+}
+
+.buttonBrandGreen {
+  background-color: var(--brand-green) !important;
+  border-color: var(--brand-green) !important;
+  color: var(--brand-black) !important;
+}
+
+.buttonBrandBlue {
+  background-color: var(--brand-blue) !important;
+  border-color: var(--brand-blue) !important;
+  color: var(--brand-white) !important;
+}
+
+.buttonBrandHuntressBlue {
+  background-color: var(--brand-cyan) !important;
+  border-color: var(--brand-cyan) !important;
+  color: var(--brand-black) !important;
+}
+
+.buttonWidthFull {
+  width: 100%;
+}
+
+.buttonWidthFit {
+  width: fit-content;
+}

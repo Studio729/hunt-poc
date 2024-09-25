@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerInner {
+  width: 100%;
+}
+
+.containerInner_sm {
+  max-width: var(--container-1);
+}
+
+.containerInner_md {
+  max-width: var(--container-2);
+}
+
+.containerInner_lg {
+  max-width: var(--container-3);
+}
+
+.containerInner_xl {
+  max-width: var(--container-4);
+}
+
+.containerInner_2xl {
+  max-width: var(--container-5);
+}
