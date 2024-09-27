@@ -27,7 +27,9 @@ const Navigation = () => {
     return (
       <div key={column.id} className="dropdown-panel-column" style={{ backgroundColor: column.backgroundColor ? column.backgroundColor : "inherit" }}>
         <div className="column-title">{column?.title}</div>
-        <div className="flex flex-col gap-6">{column?.menuItems && column.menuItems.map((item) => <SubMenuItem key={item.menuItem.id} menuItem={item.menuItem.value.data} />)}</div>
+        <div className="flex flex-col gap-6">
+          {column?.menuItems && column.menuItems.filter((item) => item.menuItem.value?.data?.title).map((item) => <SubMenuItem key={item.menuItem.id} menuItem={item.menuItem.value.data} />)}
+        </div>
         {column.footerLink && <LinkButton Text={column.footerLink.value.data.linkText} Color="Primary" showArrow={true} href={column.footerLink.value.data.href} />}
       </div>
     )
@@ -83,9 +85,11 @@ const Navigation = () => {
             <div className="title">{menuItem.title}</div>
             {menuItem?.columns && (
               <div className="dropdown-panel">
-                {menuItem.columns.map((item) => (
-                  <SubMenuColumn column={item.column.value.data} />
-                ))}
+                {menuItem.columns
+                  .filter((item) => item.column?.value?.data)
+                  .map((item) => (
+                    <SubMenuColumn column={item.column.value.data} />
+                  ))}
               </div>
             )}
           </li>
@@ -109,7 +113,7 @@ const Navigation = () => {
   return (
     <>
       {menu && (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 navigation-bar">
           <div className="flex justify-end">
             <div className="flex items-center gap-6">
               <a href="/">Partner Login</a>

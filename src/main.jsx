@@ -8,15 +8,17 @@ import Navigation from "./components/navigation-menu/navigation-menu.jsx"
 
 createRoot(document.getElementById("root")).render(
   // <NextUIProvider>
-    <BrowserRouter>
-      <div className={clsx("min-h-screen text-foreground bg-background")}>
-        <div className="relative flex flex-col">
-          <main className="container mx-auto max-w-screen-2xl flex-grow">
-          <Navigation />
-            <App />
-          </main>
-        </div>
+  <BrowserRouter>
+    <div className={clsx("min-h-screen text-foreground bg-background")}>
+      <div className="relative flex flex-col">
+        <main className="container mx-auto max-w-screen-2xl flex-grow">
+          <header className="w-full top-0 sticky" style={{ zIndex: 999, backgroundColor: "var(--brand-black)" }}>
+            <Navigation />
+          </header>
+          <App />
+        </main>
       </div>
-    </BrowserRouter>
+    </div>
+  </BrowserRouter>,
   // </NextUIProvider>,
 )
