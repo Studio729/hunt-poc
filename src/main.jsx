@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 // import { NextUIProvider } from "@nextui-org/react"
 import "./index.css"
 import clsx from "clsx"
-import NavigationMenu from "./components/navigation-menu.jsx"
+import Navigation from "./components/navigation-menu/navigation-menu.jsx"
 
 createRoot(document.getElementById("root")).render(
   // <NextUIProvider>
@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")).render(
       <div className={clsx("min-h-screen text-foreground bg-background")}>
         <div className="relative flex flex-col">
           <main className="container mx-auto max-w-screen-2xl flex-grow">
-          <NavigationMenu />
+          <Navigation />
             <App />
           </main>
         </div>

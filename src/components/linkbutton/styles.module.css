@@ -1,3 +1,19 @@
 .linkbutton {
-    font-weight: 600;
+  font-weight: 600;
+}
+
+.linkbutton:hover {
+  color: var(--brand-white);
+}
+
+.buttonBrandGreen {
+  color: var(--brand-green);
+}
+
+.buttonBrandBlue {
+  color: var(--brand-blue);
+}
+
+.buttonBrandHuntressBlue {
+  color: var(--brand-cyan);
 }
