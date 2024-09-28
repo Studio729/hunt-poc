@@ -2,6 +2,11 @@
   font-weight: 600;
 }
 
+.linkbutton img {
+  width: 6px;
+  height: 10px;
+}
+
 .linkbutton:hover {
   color: var(--brand-white);
 }

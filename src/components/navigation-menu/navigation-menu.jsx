@@ -27,8 +27,8 @@ const Navigation = () => {
     return (
       <div key={column.id} className="dropdown-panel-column" style={{ backgroundColor: column.backgroundColor ? column.backgroundColor : "inherit" }}>
         <div className="column-title">{column?.title}</div>
-        <div className="flex flex-col gap-6">
-          {column?.menuItems && column.menuItems.filter((item) => item.menuItem.value?.data?.title).map((item) => <SubMenuItem key={item.menuItem.id} menuItem={item.menuItem.value.data} />)}
+        <div className="flex flex-col">
+          {column?.menuItems && column.menuItems.filter((item) => item?.menuItem && item.menuItem.value?.data?.title).map((item) => <SubMenuItem key={item.menuItem.id} menuItem={item.menuItem.value.data} />)}
         </div>
         {column.footerLink && <LinkButton Text={column.footerLink.value.data.linkText} Color="Primary" showArrow={true} href={column.footerLink.value.data.href} />}
       </div>
@@ -39,7 +39,7 @@ const Navigation = () => {
     console.log("menuItem", menuItem)
 
     const _subMenuItem = (
-      <div className="flex flex-col gap-3">
+      <div className={`flex flex-col gap-3 ${menuItem?.icon ? "mb-3" : ""}`}>
         {menuItem.image && (
           <div className="flex justify-center items-center">
             <img src={menuItem.image} />
