@@ -23,7 +23,6 @@ const Navigation = () => {
   }, [menu])
 
   const SubMenuColumn = ({ column }) => {
-    console.log("column", column)
     return (
       <div key={column.id} className="dropdown-panel-column" style={{ backgroundColor: column.backgroundColor ? column.backgroundColor : "inherit" }}>
         <div className="column-title">{column?.title}</div>
@@ -36,7 +35,7 @@ const Navigation = () => {
   }
 
   const SubMenuItem = ({ menuItem }) => {
-    console.log("menuItem", menuItem)
+    // console.log("menuItem", menuItem)
 
     const _subMenuItem = (
       <div className={`flex flex-col gap-3 ${menuItem?.icon ? "mb-3" : ""}`}>
@@ -78,7 +77,7 @@ const Navigation = () => {
   const NavigationBrand = ({ href, image }) => <a href={href ?? "/"}>{image}</a>
 
   const NavigationMenu = ({ menuItems }) => (
-    <div className="flex items-center gap-4 relative">
+    <div className="navigation-bar-submenu">
       <ul className="navigation-menu">
         {menuItems.map((menuItem) => (
           <li key={menuItem.id} className="menuitem">
@@ -122,7 +121,7 @@ const Navigation = () => {
               </Button>
             </div>
           </div>
-          <NavigationBar className="flex justify-between items-center">
+          <NavigationBar className="navigation-bar-menu">
             <NavigationBrand
               href="/"
               image={<img src="https://cdn.builder.io/api/v1/image/assets%2F3eb6f92aedf74f109c7b4b0897ec39a8%2F4283ddf88252447a94aa903aebc838de" className="max-h-[50px]" alt="Huntress" />}

@@ -43,6 +43,8 @@ export default function BuilderPage() {
   // return the page when found
   return (
     <>
+      {content?.data?.metaDescription && <meta name="description" content={content?.data?.metaDescription} />}
+
       {/* Render the Builder page */}
       <BuilderComponent model="page" content={content} />
     </>

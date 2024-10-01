@@ -1,9 +1,9 @@
 import styles from "./styles.module.css"
 import clsx from "clsx"
-import { useEffect, useMemo } from "react"
+import { useMemo } from "react"
 
 const LinkButton = ({ Text: text, Color: color, href, showArrow, ...props }) => {
-  useEffect(() => {console.log("cn", props.className)}, [props])
+
   const linkbuttonColor = useMemo(() => {
     let _color
     switch (color) {
